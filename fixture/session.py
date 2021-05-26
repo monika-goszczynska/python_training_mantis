@@ -13,7 +13,7 @@ class SessionHelper:
         wd.find_element_by_name("password").click()
         wd.find_element_by_name("password").clear()
         wd.find_element_by_name("password").send_keys(password)
-        wd.find_element_by_xpath("//input[@value='Login']").click()
+        wd.find_element_by_css_selector("input[type='submit']").click()
 
     def logout(self):
         wd = self.app.wd
@@ -30,7 +30,8 @@ class SessionHelper:
 
     def get_logged_user(self):
         wd = self.app.wd
-        return wd.find_element_by_css_selector("td.login-info-left span").text
+        return wd.find_element_by_id("logged-in-user").text
+        # return wd.find_element_by_css_selector("td.login-info-left span").text
 
     def ensure_logout(self):
         wd = self.app.wd
