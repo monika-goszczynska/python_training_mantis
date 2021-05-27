@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from fixture.session import SessionHelper
+from fixture.project import ProjectHelper
 
 
 class Application:
@@ -17,6 +18,7 @@ class Application:
         self.wd.implicitly_wait(5)
         # pomocnik uzyskuje odsyłacz do obiektu klasy Application
         self.session = SessionHelper(self)
+        self.project = ProjectHelper(self)
         self.base_url = base_url
 
     def is_valid(self):

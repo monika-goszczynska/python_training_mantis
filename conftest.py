@@ -29,7 +29,8 @@ def app(request):
 
 
 # autouse=True sprawia, że dana fikstura wykonuje się automatycznie nawet jeśli nie jest wskazana
-@pytest.fixture(scope="session", autouse=True)
+# zmienić na True w razie potrzeby!!!!!
+@pytest.fixture(scope="session", autouse=False)
 def stop(request):
     def fin():
         fixture.session.ensure_logout()
