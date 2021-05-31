@@ -54,4 +54,4 @@ class ProjectHelper:
             cells = element.find_elements_by_tag_name("td")
             project_name = cells[0].text
             project_list.append(Project(name=project_name))
-        return project_list
+        return list(project_list)
